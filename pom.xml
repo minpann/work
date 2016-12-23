@@ -246,9 +246,6 @@
       </plugin>
     </plugins>
     <!-- 资源源文件 -->
-    <filters>
-      <filter>../profiles/dev/serverConfig.properties</filter>
-    </filters>
     <resources>
       <resource>
         <directory>src/main/resources</directory>
