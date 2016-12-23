@@ -267,20 +267,44 @@
         </plugins>
 
         <!-- 资源源文件 -->
+        <filters>
+            <filter>${enviroment}/serverConfig.properties</filter>
+        </filters>
+
+        <!-- 被替换文件 -->
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
-                <includes>
-                    <include>**/*</include>
-                </includes>
-            </resource>
-            <resource>
-                <directory>src/main/resources</directory>
-                <includes>
-                    <include>serverConfig.properties</include>
-                </includes>
                 <filtering>true</filtering>
+                <includes>
+                    <include>**/*.properties</include>
+                    <include>**/*.xml</include>
+                </includes>
             </resource>
         </resources>
     </build>
+
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <enviroment>profiles/dev</enviroment>
+            </properties>
+        </profile>
+        <profile>
+            <id>test</id>
+            <properties>
+                <enviroment>profiles/test</enviroment>
+            </properties>
+        </profile>
+        <profile>
+            <id>pro</id>
+            <properties>
+                <enviroment>profiles/pro</enviroment>
+            </properties>
+        </profile>
+    </profiles>
 </project>
