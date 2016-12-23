@@ -7,7 +7,7 @@ import org.springframework.context.ApplicationContextAware;
 /**
  * Created by panmin on 16-12-23.
  */
-public class SprintUtil implements ApplicationContextAware {
+public class SpringUtil implements ApplicationContextAware {
     private static ApplicationContext context;
 
     @SuppressWarnings("all")
@@ -26,6 +26,6 @@ public class SprintUtil implements ApplicationContextAware {
 
     @Override
     public void setApplicationContext(ApplicationContext context) throws BeansException {
-        SprintUtil.context = context;
+        SpringUtil.context = context;
     }
 }
