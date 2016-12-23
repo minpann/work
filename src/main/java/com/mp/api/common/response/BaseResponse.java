@@ -1,4 +1,4 @@
-package com.mp.api.response;
+package com.mp.api.common.response;
 
 /**
  * Created by panmin on 16-12-23.

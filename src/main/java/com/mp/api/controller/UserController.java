@@ -1,7 +1,7 @@
 package com.mp.api.controller;
 import com.mp.api.persistence.model.User;
-import com.mp.api.response.ListResponse;
-import com.mp.api.response.ResponseBuilder;
+import com.mp.api.common.response.ListResponse;
+import com.mp.api.common.response.ResponseBuilder;
 import com.mp.api.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
