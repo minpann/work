@@ -18,7 +18,8 @@ import com.mp.api.common.response.ResponseBuilder;
 import com.mp.api.entity.user.User;
 import com.mp.api.service.user.UserService;
 
-@Controller(value = "user")
+@Controller
+@RequestMapping(value = "user")
 public class UserController {
 
 	private static Logger LOG = LoggerFactory.getLogger(UserController.class);
