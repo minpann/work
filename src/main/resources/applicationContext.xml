@@ -12,7 +12,7 @@
     <context:property-placeholder location="classpath:serverConfig.properties" />
 
     <context:component-scan base-package="com.mp.api.service" />
-    <context:component-scan base-package="com.mp.api.persistence" />
+    <context:component-scan base-package="com.mp.api.dao" />
 
     <!-- dataSource -->
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
@@ -48,7 +48,7 @@
     <tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true"/>
 
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.mp.api.persistence.dao"/>
+        <property name="basePackage" value="com.mp.api.dao"/>
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
     </bean>
 

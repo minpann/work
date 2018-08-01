@@ -1,5 +1,6 @@
-package com.mp.api.service.common;
+package com.mp.api.common.redis.common;
 
+import com.mp.api.common.redis.RedisService;
 import org.junit.Test;
 
 import javax.annotation.Resource;

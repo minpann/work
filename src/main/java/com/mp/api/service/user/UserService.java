@@ -1,6 +1,6 @@
-package com.mp.api.service;
+package com.mp.api.service.user;
 
-import com.mp.api.persistence.model.User;
+import com.mp.api.entity.user.User;
 
 import java.util.List;
 

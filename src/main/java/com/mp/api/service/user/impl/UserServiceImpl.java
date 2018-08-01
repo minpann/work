@@ -1,8 +1,8 @@
-package com.mp.api.service.impl;
+package com.mp.api.service.user.impl;
 
-import com.mp.api.persistence.dao.UserDao;
-import com.mp.api.persistence.model.User;
-import com.mp.api.service.UserService;
+import com.mp.api.dao.user.UserDao;
+import com.mp.api.entity.user.User;
+import com.mp.api.service.user.UserService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

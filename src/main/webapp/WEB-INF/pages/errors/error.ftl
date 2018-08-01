@@ -6,7 +6,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>HavenWork统计管理平台</title>
+    <title>Work统计管理平台</title>
     <!-- Bootstrap Core CSS -->
     <link href="${contextPath}/styles/bootstrap.min.css" rel="stylesheet" type="text/css" />
 

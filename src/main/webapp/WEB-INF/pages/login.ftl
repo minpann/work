@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>HavenWork管理平台</title>
+    <title>Work管理平台</title>
     <!-- Bootstrap Core CSS -->
     <link href="styles/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="styles/bootstrapValidator.min.css?v=1.0" rel="stylesheet" type="text/css" />

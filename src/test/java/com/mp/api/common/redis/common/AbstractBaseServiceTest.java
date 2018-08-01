@@ -1,4 +1,4 @@
-package com.mp.api.service.common;
+package com.mp.api.common.redis.common;
 
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;

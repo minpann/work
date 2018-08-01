@@ -1,10 +1,12 @@
-package com.mp.api.persistence.dao;
+package com.mp.api.dao.user;
 
 
-import com.mp.api.persistence.model.User;
+import com.mp.api.entity.user.User;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public interface UserDao {
     int deleteByPrimaryKey(Integer id);
 

@@ -1,4 +1,4 @@
-package com.mp.api.service.common;
+package com.mp.api.common.redis;
 
 import org.springframework.data.redis.core.ZSetOperations;
 

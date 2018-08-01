@@ -1,4 +1,4 @@
-package com.mp.api.controller.model;
+package com.mp.api.vo;
 
 /**
  * Created by panmin on 16-12-23.

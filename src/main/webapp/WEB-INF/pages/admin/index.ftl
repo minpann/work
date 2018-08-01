@@ -5,7 +5,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>HavenWork管理平台</title>
+    <title>Work管理平台</title>
     <!-- Bootstrap Core CSS -->
     <#include "include/header_top.ftl" />
 

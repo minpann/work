@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.padual.com/java/logback.xsd">
 
-	<property name="logDir" value="/data/log/tomcat/havenwork" />
+	<property name="logDir" value="/data/log/tomcat/work" />
 
 	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
 		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
@@ -9,10 +9,10 @@
 		</encoder>
 	</appender>
 
-	<appender name="adminLog" class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<file>${logDir}/admin.log</file>
+	<appender name="workLog" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${logDir}/work.log</file>
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<fileNamePattern>${logDir}/havenwork.log.%d{yyyy-MM-dd}</fileNamePattern>
+			<fileNamePattern>${logDir}/work.log.%d{yyyy-MM-dd}</fileNamePattern>
 		</rollingPolicy>
 		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
 			<pattern>%date{HH:mm:ss.SSS} [%thread] %-5level %logger{0}:%line - %msg%n</pattern>
@@ -20,18 +20,18 @@
 	</appender>
 
 	<appender name="httpDetailLog" class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<file>${logDir}/admin-httpDetail.log</file>
+		<file>${logDir}/work-httpDetail.log</file>
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<fileNamePattern>${logDir}/admin-httpDetail.log.%d{yyyy-MM-dd}</fileNamePattern>
+			<fileNamePattern>${logDir}/work-httpDetail.log.%d{yyyy-MM-dd}</fileNamePattern>
 		</rollingPolicy>
 		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
 			<pattern>%date{HH:mm:ss.SSS} %X{invokeNo} [%thread] %-5level %logger{0}:%line - %msg%n</pattern>
 		</encoder>
 	</appender>
 	
-	<logger name="com.mp.havenwork"/>
+	<logger name="com.mp.work"/>
 	
-	<root level="${havenwork.log.level}">
+	<root level="${work.log.level}">
 		<appender-ref ref="console" />
 		<appender-ref ref="logfile" />
 	</root>

@@ -1,7 +1,7 @@
-package com.mp.api.service.common.impl;
+package com.mp.api.common.redis.impl;
 
 import com.alibaba.fastjson.JSON;
-import com.mp.api.service.common.RedisService;
+import com.mp.api.common.redis.RedisService;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
