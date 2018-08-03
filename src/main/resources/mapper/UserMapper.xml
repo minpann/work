@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.mp.api.dao.user.UserDao" >
   <resultMap id="BaseResultMap" type="com.mp.api.entity.user.User" >
-    <id column="id" property="id" jdbcType="INTEGER" />
+    <id column="id" property="id" jdbcType="VARCHAR" />
     <result column="username" property="username" jdbcType="VARCHAR" />
     <result column="address" property="address" jdbcType="VARCHAR" />
     <result column="description" property="description" jdbcType="VARCHAR" />
@@ -24,17 +24,17 @@
     select 
     <include refid="Base_Column_List" />
     from t_user
-    where id = #{id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
     delete from t_user
-    where id = #{id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" parameterType="com.mp.api.entity.user.User" >
     insert into t_user (id, username, address, birthday, create_time, update_time,
-      descption)
-    values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{birthDay,jdbcType=TIMESTAMP},
-    #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{descption,jdbcType=VARCHAR})
+      description)
+    values (#{id,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{birthDay,jdbcType=TIMESTAMP},
+    #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{description,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.mp.api.entity.user.User" >
     insert into t_user
@@ -63,7 +63,7 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
-        #{id,jdbcType=INTEGER},
+        #{id,jdbcType=VARCHAR},
       </if>
       <if test="username != null" >
         #{username,jdbcType=VARCHAR},
@@ -101,7 +101,7 @@
         birthday = #{birthDay,jdbcType=TIMESTAMP},
       </if>
     </set>
-    where id = #{id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=VARCHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.mp.api.entity.user.User" >
     update t_user
@@ -109,6 +109,6 @@
       address = #{address,jdbcType=VARCHAR},
       birthday = #{birthDay,jdbcType=VARCHAR},
       description = #{description,jdbcType=TIMESTAMP}
-    where id = #{id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=VARCHAR}
   </update>
 </mapper>

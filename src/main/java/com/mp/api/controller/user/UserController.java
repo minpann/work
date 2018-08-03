@@ -4,15 +4,14 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
-import com.mp.api.common.exception.ServiceException;
-import com.mp.api.common.response.JsonBackData;
-import com.mp.api.common.response.SimpleResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.mp.api.common.response.JsonBackData;
 import com.mp.api.common.response.ListResponse;
 import com.mp.api.common.response.ResponseBuilder;
 import com.mp.api.entity.user.User;
@@ -45,6 +44,56 @@ public class UserController {
 		} catch (Exception e){
 			backData.setSuccess(false);
 			backData.setBackMsg("查询异常" + e);
+		}
+		return backData;
+	}
+
+	@RequestMapping(value = "delete")
+	@ResponseBody
+	public JsonBackData delete(String id) {
+		JsonBackData backData = new JsonBackData();
+		try {
+			int count = userService.deleteByPrimaryKey(id);
+			if (count > 0) {
+				backData.setBackMsg("删除成功！");
+			} else {
+				backData.setBackMsg("没有找到id为：" + id + "的记录。");
+			}
+		} catch (Exception e){
+			backData.setSuccess(false);
+			backData.setBackMsg("删除异常" + e);
+		}
+		return backData;
+	}
+
+	@RequestMapping(value = "update")
+	@ResponseBody
+	public JsonBackData queryList(@RequestBody User user) {
+		JsonBackData backData = new JsonBackData();
+		try {
+			int count = userService.updateByPrimaryKey(user);
+			if (count > 0) {
+				backData.setBackMsg("更新成功！");
+			} else {
+				backData.setBackMsg("没有找到user id为：" + user.getId() + "的记录。");
+			}
+		} catch (Exception e){
+			backData.setSuccess(false);
+			backData.setBackMsg("更新异常" + e);
+		}
+		return backData;
+	}
+
+	@RequestMapping(value = "insert")
+	@ResponseBody
+	public JsonBackData insert(@RequestBody User user) {
+		JsonBackData backData = new JsonBackData();
+		try {
+			userService.insert(user);
+			backData.setBackMsg("新增数据成功！");
+		} catch (Exception e){
+			backData.setSuccess(false);
+			backData.setBackMsg("新增数据异常" + e);
 		}
 		return backData;
 	}
