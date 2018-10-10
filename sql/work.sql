@@ -3,7 +3,7 @@ CREATE TABLE IF NOT EXISTS`t_user` (
   `id` bigint(11) NOT NULL AUTO_INCREMENT COMMENT '主键',
   `username` varchar(20) DEFAULT NULL COMMENT '用户名',
   `address` varchar(50) DEFAULT NULL COMMENT '地址',
-  `birth_day` datetime DEFAULT NULL COMMENT '出生日期',
+  `birthday` datetime DEFAULT NULL COMMENT '出生日期',
   `description` varchar(50) DEFAULT NULL COMMENT '描述',
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
